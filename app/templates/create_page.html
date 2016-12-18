@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="no-js" lang="eng">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="telephone=no" name="format-detections"/>
+  <title>Welcome to Duck Blocks!</title>
+  <link href="/static/foundation.min.css" rel="stylesheet"/>
+  <link href="/static/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="page-content">
+    <h1>Let's Create our first Web Page</h1>
+    <div class="row">
+      <div class="large-12 columns">
+        <form class="create_file" action="generateFile" method="POST" role="form">
+          <h3>First, let's name the page's file</h3>
+          <p>This will be the label put onto the HTML file we're about to
+             create. For example, if you enter "home" as your page name,
+             the file "home.html" will be created containing the data we'll
+             entering later.<p>
+          <textarea placeholder="Enter your desired file name (.html will be added automatically later on)" name="fileName"></textarea>
+          <button class="submit-button" id="submitFile"><b>Submit</b></button>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <form class="create_page" action="generateHead" method="POST" role="form">
+          <h3>Now, we'll create the head of the page</h3>
+          <p>The head of the web page is not visible when to page loads in
+             a web browser. Rather, it contains information that pertains
+             to settings of the page and the location of other files and
+             scripts that will be used throughout the page itself. It also
+             contains the title of the page, which <i>will</i> be visible
+             on the tab for your page on the top of your browser.</p>
+          <label>Page Character Set</label>
+          <p>The character set is the list of characters (letters, numbers, and
+             specials) that will be present on your web page. If your website
+             will be in English, UTF-8 or ASCII are the most common and either
+             should be fine.</p>
+          <select name="charset">
+            <option value="none">Select a Character Set</option>
+            <option value="utf-8">UTF-8</option>
+            <option value="ascii">ASCII</option>
+          <label>Page Title</label>
+          <p>The page title is the label used for your web page in the tabs of
+             your browser. These are located at the very top of the browser
+             window and usually contain your business/blog name and a very short
+             (3-5 words) message about your business or blog and contributes to
+             your page's visibility in search engines like Google and Bing</p>
+          <textarea placeholder="Enter your desired page title." name="titleAdd"></textarea>
+          <button class="submit-button" id="submitHead"><b>Submit</b></button>
+        </form>
+      </div>
+    </div>
