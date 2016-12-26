@@ -1,29 +1,17 @@
 from bs4 import BeautifulSoup
-from flask import request
 import os
 
-class content_managment:
 
-    def __init__(self, html_file):
-        self.html_file = html_file
-
-    def generate_file(self):
-        save_path = 'templates'
-        full_name = os.path.join(save_path, self.html_file)
-        soup = BeautifulSoup('''\
-        <!DOCTYPE html>
-        <html><head></head><body></body</html>
-        ''', "html5lib")
-        with open(full_name, 'w+') as file_:
-            file_.write(soup.prettify('utf-8'))
-        return 'File created successfully!'
-
-    def populate_file(self, html_file):
-            chars = request.form['charSet']
-            title = request.form['titleAdd']
-            open('templates' + self.html_file, 'r+')
-            soup = BeautifulSoup(html_doc, 'html5lib')
-            page_head = soup.new_tag('head')
-            head_info = page_head.find_next()
-
-            return 'File created successfully!'
+def populate_file(html_file, char_set, html_title):
+    soup = BeautifulSoup(html_file, "html5lib")
+    head_info = soup.head
+    charset = soup.new_tag('meta')
+    charset.attrs['charset'] = char_set
+    title = soup.new_tag('title')
+    title.append(html_title)
+    head_info.append(charset)
+    head_info.append(title)
+    soup.body.clear()
+    html = soup.prettify('utf-8')
+    with open(html_file, 'wb') as _file:
+        _file.write(html)
