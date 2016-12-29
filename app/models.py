@@ -8,7 +8,7 @@ class Users(db.Model):
 
 class HTML_Sections(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(120), index=True)
+    name = db.Column(db.String(120), index=True, unique=True)
 
 class Tags(db.Model):
     id = db.Column(db.Integer, primary_key=True)

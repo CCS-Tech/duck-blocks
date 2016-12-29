@@ -6,6 +6,16 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <meta content="telephone=no" name="format-detections"/>
   <title>Welcome to Duck Blocks!</title>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
   <link href="/static/foundation.min.css" rel="stylesheet"/>
   <link href="/static/style.css" rel="stylesheet"/>
  </head>
