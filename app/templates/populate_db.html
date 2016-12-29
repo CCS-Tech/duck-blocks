@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js" lang="eng">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="ie=edge" http-equiv="x-ua-compatible"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="telephone=no" name="format-detections"/>
+  <title>Welcome to Duck Blocks!</title>
+  <link href="/static/foundation.min.css" rel="stylesheet"/>
+  <link href="/static/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+   <div class="page-content">
+     <h1>Populating the Database!</h1>
+     <div class="row">
+       <div class="large-4 columns">
+         <form class="html-sections" action="addSections" method="POST" role="form">
+           <h3>Let's add some section types</h3>
+           <textarea placeholder="Enter keywords that describe different sections of a web-page (head,div, etc)" name='sectionTypes'></textarea>
+           <button class="submit-button" id="submitSections"><b>Submit Sections</b></button>
+         </form>
+         <form class="html-tags" action="addTags" method="POST" role="form">
+           <h3>Now for some tags</h3>
+           <textarea placeholder="Enter some tag keywords (class, meta, img, etc)" name='tagTypes'></textarea>
+           <button class="submit-button" id="submitTags"><b>Submit Tags</b></button>
+         </form>
+         <form class="html-attrs" action="addAttrs" method="POST" role="form">
+           <h3>Different tag attributes here</h3>
+           <textarea placeholder="Now some attributes (charset, content, href)" name=attrsTypes></textarea>
+           <button class="submit-button" id="submitAttrs"><b>Submit Attributes</b></button>
+         </form>
+       </div>
+     </div>
+   </div>
+ </body>
+ </html>
